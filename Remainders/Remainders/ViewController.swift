@@ -10,12 +10,15 @@ import UserNotifications
 
 class ViewController: UIViewController {
 
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     @IBOutlet var table: UITableView!
-    var models = [MyRemainders]()
+    var models = [Remainder]()
     override func viewDidLoad() {
         super.viewDidLoad()
         table.delegate = self
         table.dataSource =  self
+        getAllitems()
         // Do any additional setup after loading the view.
     }
     @IBAction func didTapAdd(){
@@ -28,9 +31,10 @@ class ViewController: UIViewController {
         vc.completion = { title, body, date in
             DispatchQueue.main.async {
                 self.navigationController?.popToRootViewController(animated: true)
-                let new = MyRemainders(title: title, date: date, identifier: "id_\(title)")
-                self.models.append(new)
-                self.table.reloadData()
+                self.createitem(title: title, message: body, date: date)
+//                let new = MyRemainders(title: title, date: date, identifier: "id_\(title)")
+//                self.models.append(new)
+//                self.table.reloadData()
                 let content = UNMutableNotificationContent()
             content.title = title
             content.body  = body
@@ -81,7 +85,15 @@ extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            let item = models[indexPath.row]
+            deleteitem(item: item)
+        }
+    }
 }
 
 extension ViewController: UITableViewDataSource{
@@ -95,13 +107,72 @@ extension ViewController: UITableViewDataSource{
         let date = models[indexPath.row].date
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM, dd, YYYY"
-        cell.detailTextLabel?.text = formatter.string(from: date)
+        cell.detailTextLabel?.text = formatter.string(from: date!)
         return cell
     }
 }
 
-struct MyRemainders {
-    let title: String
-    let date: Date
-    let identifier: String
+//core data
+
+extension ViewController{
+    func getAllitems() {
+      
+        do {
+             models = try context.fetch(Remainder.fetchRequest())
+            DispatchQueue.main.async {
+                self.table.reloadData()
+            }
+        }
+        catch  {
+            //error
+        }
+    }
+    
+    func createitem(title: String, message: String, date: Date) {
+        
+        let newItem = Remainder(context: context)
+        newItem.title = title
+        newItem.message = message
+        newItem.date = date
+        
+        do {
+            try context.save()
+            getAllitems()
+        } catch  {
+            
+        }
+    }
+    
+    func deleteitem(item: Remainder) {
+        
+        context.delete(item)
+        do {
+            try context.save()
+            getAllitems()
+        } catch  {
+            //error
+        }
+        
+    }
+    
+    func updateitem(item: Remainder, newTitle: String, newMessage: String, newDate: Date) {
+        
+        item.title = newTitle
+        item.message = newMessage
+        item.date = newDate
+        do {
+            try context.save()
+            getAllitems()
+        } catch  {
+            //error
+        }
+        
+        
+    }
 }
+
+//struct MyRemainders {
+//    let title: String
+//    let date: Date
+//    let identifier: String
+//}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78AA18E528F41B48009371CB /* Remainders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78AA18E328F41B47009371CB /* Remainders.xcdatamodeld */; };
 		78E5634128F020FA00E1FE1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5634028F020FA00E1FE1E /* AppDelegate.swift */; };
 		78E5634328F020FA00E1FE1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5634228F020FA00E1FE1E /* SceneDelegate.swift */; };
 		78E5634528F020FA00E1FE1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5634428F020FA00E1FE1E /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78AA18E428F41B48009371CB /* Remainders.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Remainders.xcdatamodel; sourceTree = "<group>"; };
 		78E5633D28F020FA00E1FE1E /* Remainders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remainders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E5634028F020FA00E1FE1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78E5634228F020FA00E1FE1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				78E5634928F020FD00E1FE1E /* Assets.xcassets */,
 				78E5634B28F020FD00E1FE1E /* LaunchScreen.storyboard */,
 				78E5634E28F020FD00E1FE1E /* Info.plist */,
+				78AA18E328F41B47009371CB /* Remainders.xcdatamodeld */,
 			);
 			path = Remainders;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				78E5634128F020FA00E1FE1E /* AppDelegate.swift in Sources */,
 				78E5635728F0253C00E1FE1E /* AddViewController.swift in Sources */,
 				78E5634328F020FA00E1FE1E /* SceneDelegate.swift in Sources */,
+				78AA18E528F41B48009371CB /* Remainders.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +351,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		78AA18E328F41B47009371CB /* Remainders.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				78AA18E428F41B48009371CB /* Remainders.xcdatamodel */,
+			);
+			currentVersion = 78AA18E428F41B48009371CB /* Remainders.xcdatamodel */;
+			path = Remainders.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 78E5633528F020FA00E1FE1E /* Project object */;
 }
