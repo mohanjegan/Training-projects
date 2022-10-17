@@ -17,46 +17,60 @@
                 <rect key="frame" x="0.0" y="0.0" width="363" height="145"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Uav-7D-67L">
-                        <rect key="frame" x="127" y="30" width="109.5" height="85.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="icS-lQ-QAS">
+                        <rect key="frame" x="10" y="10" width="343" height="129"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="kVI-0e-aRb">
-                                <rect key="frame" x="0.0" y="0.0" width="109.5" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Je4-pj-6yt">
+                                <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ifn-Dd-eND">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utX-94-pYC">
-                                        <rect key="frame" x="68" y="0.0" width="41.5" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="JTI-YF-4FM"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bCd-u1-2ry"/>
+                                </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="60u-T4-U7v">
-                                <rect key="frame" x="1.5" y="65" width="108" height="20.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1eK-5A-2c4">
+                                <rect key="frame" x="0.0" y="79" width="343" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTf-An-Hwa">
-                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="wpI-8D-uqx"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRY-5L-GDm">
-                                        <rect key="frame" x="66.5" y="0.0" width="41.5" height="20.5"/>
+                                        <rect key="frame" x="167" y="0.0" width="176" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="faV-PR-foM"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1nS-3a-536"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Uav-7D-67L" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4DZ-Wg-Ub7"/>
-                    <constraint firstItem="Uav-7D-67L" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="YFQ-PZ-Dqb"/>
+                    <constraint firstItem="icS-lQ-QAS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Czt-CV-CFq"/>
+                    <constraint firstItem="icS-lQ-QAS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="dMj-cc-yfU"/>
+                    <constraint firstAttribute="bottom" secondItem="icS-lQ-QAS" secondAttribute="bottom" constant="10" id="evu-nO-vyc"/>
+                    <constraint firstAttribute="trailing" secondItem="icS-lQ-QAS" secondAttribute="trailing" constant="10" id="s7l-uS-9yL"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
