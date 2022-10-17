@@ -11,8 +11,9 @@
 		784EAFEC28F94B3900159186 /* UsersInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784EAFEA28F94B3900159186 /* UsersInfoTableViewCell.xib */; };
 		784EAFF128F95BDF00159186 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EAFF028F95BDF00159186 /* UserViewModel.swift */; };
 		784EAFF728F95CF500159186 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EAFF628F95CF500159186 /* UserInfo.swift */; };
+		78A76AA628FD637200D9619A /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A76AA528FD637200D9619A /* UIImageView+Extension.swift */; };
+		78A76AB028FD6A2200D9619A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A76AAF28FD6A2200D9619A /* NetworkManager.swift */; };
 		78BD9E0328F81AAE00A97BC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD9E0228F81AAE00A97BC0 /* AppDelegate.swift */; };
-		78BD9E0528F81AAE00A97BC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD9E0428F81AAE00A97BC0 /* SceneDelegate.swift */; };
 		78BD9E0728F81AAE00A97BC0 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD9E0628F81AAE00A97BC0 /* UsersViewController.swift */; };
 		78BD9E0A28F81AAE00A97BC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78BD9E0828F81AAE00A97BC0 /* Main.storyboard */; };
 		78BD9E0C28F81AB100A97BC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78BD9E0B28F81AB100A97BC0 /* Assets.xcassets */; };
@@ -25,9 +26,10 @@
 		784EAFEA28F94B3900159186 /* UsersInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersInfoTableViewCell.xib; sourceTree = "<group>"; };
 		784EAFF028F95BDF00159186 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		784EAFF628F95CF500159186 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		78A76AA528FD637200D9619A /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		78A76AAF28FD6A2200D9619A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		78BD9DFF28F81AAE00A97BC0 /* Http-Methods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Http-Methods.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78BD9E0228F81AAE00A97BC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		78BD9E0428F81AAE00A97BC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		78BD9E0628F81AAE00A97BC0 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		78BD9E0928F81AAE00A97BC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78BD9E0B28F81AB100A97BC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		78A76AA828FD638500D9619A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				78A76AA528FD637200D9619A /* UIImageView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		78BD9DF628F81AAE00A97BC0 = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +109,13 @@
 		78BD9E0128F81AAE00A97BC0 /* Http-Methods */ = {
 			isa = PBXGroup;
 			children = (
+				78A76AA828FD638500D9619A /* Extensions */,
 				784EAFF928F95CFA00159186 /* Model */,
 				784EAFEE28F94B6E00159186 /* Views */,
 				784EAFFB28F9679600159186 /* Controller */,
 				784EAFF328F95BF600159186 /* ViewModel */,
 				78BD9E0228F81AAE00A97BC0 /* AppDelegate.swift */,
-				78BD9E0428F81AAE00A97BC0 /* SceneDelegate.swift */,
+				78A76AAF28FD6A2200D9619A /* NetworkManager.swift */,
 				78BD9E1728F81D0900A97BC0 /* UserViewController.swift */,
 				78BD9E0828F81AAE00A97BC0 /* Main.storyboard */,
 				78BD9E0B28F81AB100A97BC0 /* Assets.xcassets */,
@@ -187,11 +198,12 @@
 			files = (
 				78BD9E0728F81AAE00A97BC0 /* UsersViewController.swift in Sources */,
 				78BD9E1828F81D0900A97BC0 /* UserViewController.swift in Sources */,
+				78A76AA628FD637200D9619A /* UIImageView+Extension.swift in Sources */,
 				784EAFEB28F94B3900159186 /* UsersInfoTableViewCell.swift in Sources */,
+				78A76AB028FD6A2200D9619A /* NetworkManager.swift in Sources */,
 				784EAFF128F95BDF00159186 /* UserViewModel.swift in Sources */,
 				78BD9E0328F81AAE00A97BC0 /* AppDelegate.swift in Sources */,
 				784EAFF728F95CF500159186 /* UserInfo.swift in Sources */,
-				78BD9E0528F81AAE00A97BC0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +353,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6CWF679Z8N;
 				INFOPLIST_FILE = "Http-Methods/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -361,7 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6CWF679Z8N;
 				INFOPLIST_FILE = "Http-Methods/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

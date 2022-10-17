@@ -24,11 +24,21 @@ class UsersViewController: UIViewController {
         tableView.dataSource = self
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
-        userListViewModel.postFunc {
+        userListViewModel.postFunc { response in
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+            if response{
+                    self.tableView.reloadData()
+            }
+            else{
+                self.showAlert()
+            }
             }
         }
+    }
+    public func showAlert(){
+        let alertController = UIAlertController(title:"Alert", message: "No Network Available", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -43,13 +53,6 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UsersInfoTableViewCell") as! UsersInfoTableViewCell
         cell.userDetails = userListViewModel.usersList[indexPath.row]
         return cell
-    }
-}
-
-//singleton print
-extension UIViewController {
-    func printLogs(message: Any) {
-        //print(message)
     }
 }
 

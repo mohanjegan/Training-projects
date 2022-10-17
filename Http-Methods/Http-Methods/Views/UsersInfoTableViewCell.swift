@@ -9,6 +9,7 @@ import UIKit
 
 class UsersInfoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var idLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
@@ -17,41 +18,20 @@ class UsersInfoTableViewCell: UITableViewCell {
         didSet{
             self.nameLbl.text = userDetails.name
             self.idLbl.text = "ID: \(userDetails.id ?? "")"
-            self.dateLbl.text = " Created At: \(userDetails.createdAt ?? "")"
+            let formatterget = DateFormatter()
+            formatterget.dateFormat = "yyyy-mm-ddTHH:mm:ss"
+            let formatterSet = DateFormatter()
+            formatterSet.dateFormat = "MMM-dd-yyyy HH:mm:ss"
+            if let getDate = formatterget.date(from: userDetails.createdAt!){
+                self.dateLbl.text = formatterSet.string(from: getDate)
+            } else {
+                self.dateLbl.text = "NA"
+            }
+            //print(userDetails.createdAt!)
+            let urlString = "\((userDetails?.avatar)!)"
+            let url = URL(string: urlString)
+            userImageView.downloaded(from: url!)
         }
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }
 
-//download image for imageview
-extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-            else { return }
-            DispatchQueue.main.async() { [weak self] in
-                self?.image = image
-            }
-        }.resume()
-    }
-    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
-    }
-}
