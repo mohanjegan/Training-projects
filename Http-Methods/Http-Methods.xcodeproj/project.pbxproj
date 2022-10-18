@@ -18,7 +18,6 @@
 		78BD9E0A28F81AAE00A97BC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78BD9E0828F81AAE00A97BC0 /* Main.storyboard */; };
 		78BD9E0C28F81AB100A97BC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78BD9E0B28F81AB100A97BC0 /* Assets.xcassets */; };
 		78BD9E0F28F81AB100A97BC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78BD9E0D28F81AB100A97BC0 /* LaunchScreen.storyboard */; };
-		78BD9E1828F81D0900A97BC0 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD9E1728F81D0900A97BC0 /* UserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		78BD9E0B28F81AB100A97BC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78BD9E0E28F81AB100A97BC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78BD9E1028F81AB100A97BC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		78BD9E1728F81D0900A97BC0 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +114,6 @@
 				784EAFF328F95BF600159186 /* ViewModel */,
 				78BD9E0228F81AAE00A97BC0 /* AppDelegate.swift */,
 				78A76AAF28FD6A2200D9619A /* NetworkManager.swift */,
-				78BD9E1728F81D0900A97BC0 /* UserViewController.swift */,
 				78BD9E0828F81AAE00A97BC0 /* Main.storyboard */,
 				78BD9E0B28F81AB100A97BC0 /* Assets.xcassets */,
 				78BD9E0D28F81AB100A97BC0 /* LaunchScreen.storyboard */,
@@ -197,7 +194,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				78BD9E0728F81AAE00A97BC0 /* UsersViewController.swift in Sources */,
-				78BD9E1828F81D0900A97BC0 /* UserViewController.swift in Sources */,
 				78A76AA628FD637200D9619A /* UIImageView+Extension.swift in Sources */,
 				784EAFEB28F94B3900159186 /* UsersInfoTableViewCell.swift in Sources */,
 				78A76AB028FD6A2200D9619A /* NetworkManager.swift in Sources */,

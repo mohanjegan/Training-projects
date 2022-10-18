@@ -17,20 +17,26 @@ class UsersInfoTableViewCell: UITableViewCell {
     var userDetails: UserInfo! {
         didSet{
             self.nameLbl.text = userDetails.name
-            self.idLbl.text = "ID: \(userDetails.id ?? "")"
+            self.idLbl.text = "ID: \(userDetails.id)"
             let formatterget = DateFormatter()
-            formatterget.dateFormat = "yyyy-mm-ddTHH:mm:ss"
+            formatterget.dateFormat = "yyyy-mm-dd'T'HH:mm:ss.SSS'Z'"
             let formatterSet = DateFormatter()
-            formatterSet.dateFormat = "MMM-dd-yyyy HH:mm:ss"
-            if let getDate = formatterget.date(from: userDetails.createdAt!){
-                self.dateLbl.text = formatterSet.string(from: getDate)
+            formatterSet.dateFormat = "MMM-dd-yyyy HH:mm"
+            if let getDate = formatterget.date(from: userDetails.createdAt){
+                self.dateLbl.text = " CreatedAt \(formatterSet.string(from: getDate))"
             } else {
                 self.dateLbl.text = "NA"
             }
-            //print(userDetails.createdAt!)
+            print(userDetails.createdAt)
+            let today = Date()
+            print(today)
             let urlString = "\((userDetails?.avatar)!)"
             let url = URL(string: urlString)
             userImageView.downloaded(from: url!)
+            userImageView.layer.cornerRadius = userImageView.frame.height/2
+            userImageView.layer.borderWidth = 1
+            userImageView.layer.borderColor = UIColor.black.cgColor
+
         }
     }
 }

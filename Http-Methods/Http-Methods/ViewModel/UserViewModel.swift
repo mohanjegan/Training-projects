@@ -32,7 +32,6 @@ class UserViewModel {
             }
             else{
                 completionHandler(false)
-                //UsersViewController.showAlert()
             }
         }.resume()
     }

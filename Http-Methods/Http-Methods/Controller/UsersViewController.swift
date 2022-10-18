@@ -22,8 +22,7 @@ class UsersViewController: UIViewController {
         tableView.register(UINib(nibName: "UsersInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "UsersInfoTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight = 100
         userListViewModel.postFunc { response in
             DispatchQueue.main.async {
             if response{
