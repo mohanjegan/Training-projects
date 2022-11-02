@@ -31,26 +31,50 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ab1-OV-vxi">
+                                <rect key="frame" x="169" y="514" width="76" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UGY-GD-VAb"/>
+                                </constraints>
+                                <state key="normal" title="save Dates"/>
+                                <connections>
+                                    <action selector="sample:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jJJ-vE-t80"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADs-e0-4pa">
+                                <rect key="frame" x="162.5" y="585" width="89" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Pgc-y0-oGI"/>
+                                </constraints>
+                                <state key="normal" title="Delete Dates"/>
+                                <connections>
+                                    <action selector="Delete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dde-hy-7rn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ADs-e0-4pa" firstAttribute="top" secondItem="ab1-OV-vxi" secondAttribute="bottom" constant="41" id="1o5-z1-H5m"/>
                             <constraint firstItem="1eh-o1-13S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="89A-Ux-0II"/>
+                            <constraint firstItem="ab1-OV-vxi" firstAttribute="top" secondItem="1eh-o1-13S" secondAttribute="bottom" constant="100" id="A1l-eD-j9t"/>
                             <constraint firstItem="IZB-tD-oAO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MgS-da-pJR"/>
                             <constraint firstItem="1eh-o1-13S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="XRU-RU-pQl"/>
+                            <constraint firstItem="ab1-OV-vxi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bJr-zX-mqO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1eh-o1-13S" secondAttribute="trailing" id="dzT-dw-LnM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IZB-tD-oAO" secondAttribute="trailing" id="ecf-0A-D2P"/>
                             <constraint firstItem="IZB-tD-oAO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iJ5-Bc-dqG"/>
                             <constraint firstItem="1eh-o1-13S" firstAttribute="top" secondItem="IZB-tD-oAO" secondAttribute="bottom" id="kD8-Xr-elA"/>
+                            <constraint firstItem="ADs-e0-4pa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qwu-a5-AeS"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="calender" destination="1eh-o1-13S" id="quY-05-2Lb"/>
+                        <outlet property="calendar" destination="1eh-o1-13S" id="Oa9-xc-bYa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-29" y="64"/>
+            <point key="canvasLocation" x="-30.434782608695656" y="63.616071428571423"/>
         </scene>
     </scenes>
     <resources>
